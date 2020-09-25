@@ -21,7 +21,7 @@ mix.styles([
     'resources/admin/plugins/datepicker/datepicker3.css',
     'resources/admin/plugins/select2/select2.min.css',
     'resources/admin/plugins/datatables/dataTables.bootstrap.css',
-
+    'resources/admin/dist/css/custom.css',
 ], 'public/css/admin.css');
 
 mix.scripts([

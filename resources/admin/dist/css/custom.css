@@ -1,0 +1,10 @@
+.table form {
+    display: inline-block;
+}
+
+.table .delete {
+    display: block;
+    background: transparent;
+    border: 0;
+    color: #3d8ebc;
+}
