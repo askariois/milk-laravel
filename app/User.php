@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -70,20 +71,24 @@ class User extends Authenticatable
         if ($image == null) {
             return;
         }
-        Storage::delete('upload/' . $this->image);
-        $filename = str_random(10) . '.' . $image->extension();
-        $image->saveAs('uploads', $filename);
-        $this->image = $filename;
+
+        if ($this->avatar != null) {
+            Storage::delete('upload/' . $this->avatar);
+        }
+
+        $filename = Str::random(10) . '.' . $image->extension();
+        $image->storeAs('uploads', $filename);
+        $this->avatar = $filename;
         $this->save();
     }
 
     public function getImage()
     {
-        if ($this->image == null) {
-            return 'img/no-user-image.png';
+        if ($this->avatar == null) {
+            return '/img/no-user-image.jpg';
         }
 
-        return '/uploads/' . $this->image;
+        return '/uploads/' . $this->avatar;
     }
 
     public function makeAdmin()
