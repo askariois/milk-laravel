@@ -21,7 +21,6 @@
 
    <!-- Main content -->
    <section class="content">
-      {!! Form::open(['route' => ['posts.store'], 'files'=> true ]) !!}
 
       <!-- Default box -->
       <div class="box">
@@ -40,7 +39,7 @@
                      <th>ID</th>
                      <th>Название</th>
                      <th>Категория</th>
-                     <th>Теги</th>
+
                      <th>Картинка</th>
                      <th>Действия</th>
                   </tr>
@@ -49,10 +48,9 @@
                   @foreach($posts as $post)
                   <tr>
                      <td>{{$post->id}}</td>
-                     <td>{{$post->title}}
-                     </td>
-                     <td>Работа</td>
-                     <td>Фриланс, Upwork</td>
+                     <td>{{$post->title}} </td>
+                     <td>{{$post->getCategoryTitle()}}</td>
+
                      <td>
                         <img src="{{$post->getImage()}}" alt="" width="100">
                      </td>
@@ -73,7 +71,6 @@
          <!-- /.box-body -->
       </div>
       <!-- /.box -->
-
    </section>
    <!-- /.content -->
 </div>

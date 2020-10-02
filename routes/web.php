@@ -17,12 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'DashboardController@index');
-    Route::resource('/categories', 'CategorisController'); 
-    Route::resource('/tags', 'TagsController');    
-    Route::resource('/users', 'UserController'); 
-    Route::resource('/posts', 'PostController');  
+    Route::resource('/categories', 'CategorisController');
+    Route::resource('/users', 'UserController');
+    Route::resource('/posts', 'PostController');
 });
-
-
