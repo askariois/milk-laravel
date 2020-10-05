@@ -44,3 +44,24 @@ mix.copy('resources/admin/bootstrap/fonts', 'public/fonts');
 mix.copy('resources/admin/dist/fonts', 'public/fonts');
 mix.copy('resources/admin/dist/img', 'public/img');
 mix.copy('resources/admin/plugins/iCheck/minimal/blue.png', 'public/css');
+
+
+
+mix.styles([
+    'resources/front/css/bootstrap.css',
+    'resources/front/css/custom.css',
+    'resources/front/css/normalize.css',
+    'resources/front/css/responsive.css',
+    'resources/front/css/swipe.css',
+], 'public/css/front.css');
+
+
+mix.scripts([
+    'resources/front/js/jquery.js',
+    'resources/front/js/SwiperBox.js',
+    'resources/front/js/custom.js',
+], 'public/js/front.js');
+
+
+mix.copy('resources/front/fonts', 'public/fonts');
+mix.copy('resources/front/img', 'public/img');
