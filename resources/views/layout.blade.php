@@ -32,7 +32,7 @@
             <!-- logo -->
 
             <!-- menu -->
-            <div class="col-xl-5 col-lg-6 col-3">
+            <div class="col-xl-6 col-lg-6 col-3">
                <!-- mobile menu -->
                <div class="header_burger">
                   <span></span>

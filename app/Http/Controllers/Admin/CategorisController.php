@@ -24,7 +24,10 @@ class CategorisController extends Controller
         $this->validate($request, [
             'title' => 'required'
         ]);
-        Category::create($request->all());
+
+        $category = Category::add($request->all());
+        $category->uploadImageCategory($request->file('image'));
+        $category->uploadMiniature($request->file('miniature'));
 
         return redirect()->route('categories.index');
     }
@@ -44,8 +47,10 @@ class CategorisController extends Controller
         $category = Category::find($id);
 
         $category->update($request->all());
+        $category->uploadImageCategory($request->file('image'));
+        $category->uploadMiniature($request->file('miniature'));
 
-        return redirect()->route('categories.index');
+        return view('admin.categories.edit', ['category' => $category]);
     }
 
     public function destroy($id)

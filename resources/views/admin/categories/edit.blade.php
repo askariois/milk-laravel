@@ -21,13 +21,38 @@
             <h3 class="box-title">Меняем категорию</h3>
             @include('admin.error')
          </div>
-         {!! Form::open(['route' => ['categories.update',$category->id], 'method'=>'put' ]) !!}
+         {!! Form::open(['route' => ['categories.update',$category->id], 'method'=>'put' , 'files' => true]) !!}
          <div class="box-body">
 
-            <div class="col-md-6">
+            <div class="col-md-12">
                <div class="form-group">
                   <label for="exampleInputEmail1">Название</label>
                   <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$category->title}}">
+               </div>
+            </div>
+            <div class="col-md-6">
+               <div class="form-group">
+                  <img src="{{$category->getImageCategory()}}" alt="" class="img-responsive" width="200">
+                  <label for="exampleInputFile">Банерная картинка</label>
+                  <input type="file" id="exampleInputFile" name="image">
+
+                  <p class="help-block">Какое-нибудь уведомление о форматах..</p>
+               </div>
+            </div>
+
+            <div class="col-md-6">
+               <div class="form-group">
+                  <img src="{{$category->getMiniature()}}" alt="" class="img-responsive" width="200">
+                  <label for="exampleInputFile">Миниатюра</label>
+                  <input type="file" id="exampleInputFile" name="miniature">
+
+                  <p class="help-block">Какое-нибудь уведомление о форматах..</p>
+               </div>
+            </div>
+            <div class="col-md-12">
+               <div class="form-group">
+                  <label for="exampleInputEmail1">Полный текст</label>
+                  <textarea name="content" id="summernote" cols="30" rows="10" class="form-control">{{$category->content}}</textarea>
                </div>
             </div>
          </div>
