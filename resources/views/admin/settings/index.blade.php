@@ -7,7 +7,7 @@
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <h1>
-         Категории
+         Настройка сайта
       </h1>
    </section>
 

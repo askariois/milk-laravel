@@ -22,4 +22,5 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::resource('/settings', 'SettingController');
     Route::resource('/users', 'UserController');
     Route::resource('/posts', 'PostController');
+    Route::resource('/pages', 'PageController');
 });

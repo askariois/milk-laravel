@@ -8,8 +8,6 @@
    <section class="content-header">
       <h1>
          Добавить категорию
-         <small>приятные слова..</small>
-      </h1>
    </section>
 
    <!-- Main content -->
@@ -19,7 +17,6 @@
       <div class="box">
          {!! Form::open(['route' => 'categories.store', 'files' => true]) !!}
          <div class="box-header with-border">
-            <h3 class="box-title">Добавляем категорию</h3>
             @include('admin.error')
          </div>
          <div class="box-body">
@@ -54,7 +51,7 @@
          </div>
          <!-- /.box-body -->
          <div class="box-footer">
-            <button class="btn btn-default">Назад</button>
+            <a href="{{route('categories.index')}}" class="btn btn-default">Назад</a>
             <button class="btn btn-success pull-right">Добавить</button>
          </div>
          <!-- /.box-footer-->

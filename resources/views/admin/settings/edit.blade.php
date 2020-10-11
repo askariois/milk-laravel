@@ -8,7 +8,7 @@
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <h1>
-         Добавить продукт
+         Настройка сайта
       </h1>
    </section>
 
@@ -17,9 +17,6 @@
       {!! Form::open(['route' => ['settings.update' , $setting->id], 'method'=>'put', 'files'=>true]) !!}
       <!-- Default box -->
       <div class="box">
-         <div class="box-header with-border">
-            <h3 class="box-title">Добавляем продукт</h3>
-         </div>
          <div class="box-body">
             <div class="col-md-6">
                <div class="form-group">

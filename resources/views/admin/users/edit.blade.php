@@ -6,8 +6,7 @@
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <h1>
-         Добавить пользователя
-         <small>приятные слова..</small>
+         Изменить пользователя
       </h1>
    </section>
 
@@ -17,7 +16,6 @@
       <!-- Default box -->
       <div class="box">
          <div class="box-header with-border">
-            <h3 class="box-title">Добавляем пользователя</h3>
             @include('admin.error')
          </div>
          {!! Form::open(['route' => ['users.update',$user->id], 'method'=>'put' , 'files'=> true ]) !!}
@@ -46,7 +44,7 @@
          </div>
          <!-- /.box-body -->
          <div class="box-footer">
-            <button class="btn btn-default">Назад</button>
+            <a href="{{route('users.index')}}" class="btn btn-default">Назад</a>
             <button class="btn btn-warning pull-right">Изменить</button>
          </div>
          {!! Form::close() !!}

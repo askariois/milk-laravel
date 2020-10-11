@@ -9,14 +9,9 @@
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <h1>
-         Blank page
-         <small>it all starts here</small>
+         Добавить продукт
       </h1>
-      <ol class="breadcrumb">
-         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-         <li><a href="#">Examples</a></li>
-         <li class="active">Blank page</li>
-      </ol>
+
    </section>
 
    <!-- Main content -->
@@ -24,20 +19,16 @@
 
       <!-- Default box -->
       <div class="box">
-         <div class="box-header">
-            <h3 class="box-title">Листинг сущности</h3>
-            @include('admin.error')
-         </div>
          <!-- /.box-header -->
          <div class="box-body">
             <div class="form-group">
-               <a href="{{route('posts.create')}}" class="btn btn-success">Добавить</a>
+               <a href="{{route('posts.create')}}" class="btn btn-success">Добавить продукт</a>
             </div>
             <table id="example1" class="table table-bordered table-striped">
                <thead>
                   <tr>
                      <th>ID</th>
-                     <th>Название</th>
+                     <th>Жирность</th>
                      <th>Категория</th>
 
                      <th>Картинка</th>
@@ -52,7 +43,7 @@
                      <td>{{$post->getCategoryTitle()}}</td>
 
                      <td>
-                        <img src="{{$post->getImage()}}" alt="" width="100">
+                        <img src="{{$post->getImage()}}" alt="" width="50">
                      </td>
                      <td><a href="{{route('posts.edit' , $post->id)}}" class="fa fa-pencil"></a>
 

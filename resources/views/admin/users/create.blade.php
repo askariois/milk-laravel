@@ -8,7 +8,6 @@
    <section class="content-header">
       <h1>
          Добавить пользователя
-         <small>приятные слова..</small>
       </h1>
    </section>
 
@@ -45,7 +44,7 @@
          </div>
          <!-- /.box-body -->
          <div class="box-footer">
-            <button class="btn btn-default">Назад</button>
+            <a href="{{route('users.index')}}" class="btn btn-default">Назад</a>
             <button class="btn btn-success pull-right">Добавить</button>
          </div>
          <!-- /.box-footer-->

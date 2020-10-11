@@ -7,14 +7,8 @@
    <!-- Content Header (Page header) -->
    <section class="content-header">
       <h1>
-         Blank page
-         <small>it all starts here</small>
+         Пользователи
       </h1>
-      <ol class="breadcrumb">
-         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-         <li><a href="#">Examples</a></li>
-         <li class="active">Blank page</li>
-      </ol>
    </section>
 
    <!-- Main content -->
@@ -22,13 +16,10 @@
 
       <!-- Default box -->
       <div class="box">
-         <div class="box-header">
-            <h3 class="box-title">Листинг сущности</h3>
-         </div>
          <!-- /.box-header -->
          <div class="box-body">
             <div class="form-group">
-               <a href="{{route('users.create')}}" class="btn btn-success">Добавить</a>
+               <a href="{{route('users.create')}}" class="btn btn-success">Добавить пользователя</a>
             </div>
             <table id="example1" class="table table-bordered table-striped">
                <thead>

@@ -58,29 +58,50 @@
           </div>
           <!-- /.input group -->
         </div>
-
-
-
         <!-- checkbox -->
         <div class="form-group">
           <label>
             <input type="checkbox" class="minimal" name="status">
           </label>
           <label>
-            Черновик
+            Скрыть
           </label>
         </div>
       </div>
       <div class="col-md-12">
         <div class="form-group">
-          <label for="exampleInputEmail1">Полный текст</label>
-          <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
+          <label for="exampleInputEmail1">Характеристика</label>
+          <textarea name="content" id="summernote" cols="30" rows="10" class="form-control"></textarea>
         </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Температура хранения:</label>
+          <input type="text" name="product_temp" class="form-control" id="exampleInputEmail1" placeholder="" value="{{old('title')}}">
+        </div>
+
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Срок годности:</label>
+          <input type="text" name="product_srok" class="form-control" id="exampleInputEmail1" placeholder="" value="{{old('title')}}">
+        </div>
+
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Масса:</label>
+          <input type="text" name="product_massa" class="form-control" id="exampleInputEmail1" placeholder="" value="{{old('title')}}">
+        </div>
+
       </div>
     </div>
     <!-- /.box-body -->
     <div class="box-footer">
-      <button class="btn btn-default">Назад</button>
+      <a href="{{route('posts.index')}}" class="btn btn-default">Назад</a>
       <button class="btn btn-success pull-right">Добавить</button>
     </div>
     <!-- /.box-footer-->
