@@ -14,10 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/product/{slug}', 'HomeController@show')->name('product.show');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'DashboardController@index');
     Route::resource('/categories', 'CategorisController');
+    Route::resource('/settings', 'SettingController');
     Route::resource('/users', 'UserController');
     Route::resource('/posts', 'PostController');
 });

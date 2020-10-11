@@ -31,7 +31,7 @@
                   <div class="col-lg-5 col-12 catalog__padding">
                      <div class="catalog__desc">
                         {!! $category->content !!}
-                        <a href="pasmoloko.html">Узнать больше</a>
+                        <a href="{{route('product.show' , $category->slug)}}">Узнать больше</a>
                      </div>
                      <div class="catalog_shadow"></div>
                   </div>

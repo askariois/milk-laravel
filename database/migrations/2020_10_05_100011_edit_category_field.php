@@ -14,7 +14,7 @@ class EditCategoryField extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->text('content')->change();
+            $table->text('content')->nullable()->change();
         });
     }
 

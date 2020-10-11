@@ -25,8 +25,12 @@
          <div class="row justify-content-between">
             <!-- logo -->
             <div class="col-lg-2 logo">
-               <a href="index.html">
-                  <img src="/img/logo.png" alt="логотип" />
+               <a href="/">
+                  @if(isset($settings))
+                  @foreach($settings as $setting)
+                  <img src="{{$setting->getLogo()}}" alt="логотип" />
+                  @endforeach
+                  @endif
                </a>
             </div>
             <!-- logo -->
@@ -62,8 +66,7 @@
             <!-- social and language -->
             <div class="col-lg-3 col-3 d-flex align-items-center justify-content-between">
                <div class="header__social d-flex align-items-center">
-                  <a href="#"> <img src="/img/face.svg" alt=""> </a>
-                  <a href="#"> <img src="/img/insta.svg" alt=""> </a>
+                  @include('social')
                </div>
 
 
@@ -99,16 +102,23 @@
                <a href="contact.html">Обратная связь</a>
             </div>
             <div class="col-lg-3">
-               <img src="/img/logo.png" class="footer_logo" alt="">
+               @if(isset($settings))
+               @foreach($settings as $setting)
+               <img src="{{$setting->getLogo()}}" alt="логотип" class="footer_logo" />
+               @endforeach
+               @endif
             </div>
             <div class="col-lg-auto">
                <p>2020 ОАО «Бишкексут»</p>
             </div>
             <div class="col-lg-2">
-               <img src="/img/logo.png" class="footer_logo_mob" alt="">
+               @if(isset($settings))
+               @foreach($settings as $setting)
+               <img src="{{$setting->getLogo()}}" alt="логотип" class="footer_logo_mob" />
+               @endforeach
+               @endif
                <div class="header__social d-flex align-items-center">
-                  <a href="https://www.facebook.com/bishkeksut"> <img src="/img/face.svg" alt=""> </a>
-                  <a href="https://www.instagram.com/bishkeksut/"> <img src="/img/insta.svg" alt=""> </a>
+                  @include('social')
                </div>
             </div>
          </div>
