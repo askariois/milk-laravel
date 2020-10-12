@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index');
 Route::get('/product/{slug}', 'HomeController@show')->name('product.show');
+Route::get('/pages/{slug}', 'PagehomeController@details')->name('pages.details');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/', 'DashboardController@index');

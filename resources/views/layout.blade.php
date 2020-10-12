@@ -45,20 +45,25 @@
 
                <ul class="menu d-flex mb-0 justify-content-between header_menu">
                   <li> <input type="search" placeholder="Найти" /></li>
-                  <li> <a href="proizvodstvo.html">Производство</a> </li>
-                  <li> <a href="marka.html">О торговой марке</a></li>
+                  @foreach($pages as $page)
+                  @if(($page->id == '4'))
                   <li class="dropdown">
-                     <a href="all_product.html" data-toggle="dropdown">Продукты</a>
+                     <a href="{{route('pages.details', $page->slug)}}" data-toggle="dropdown">{{$page->title}}</a>
                      <div class="dropdown-content">
-                        <a href="pasmoloko.html">Пастеризованное молоко</a>
-                        <a href="ultramoloko.html">Ультрапастеризованное молоко</a>
-                        <a href="kefir.html">Кефир</a>
-                        <a href="smetana.html"> Сметана </a>
-                        <a href="tvorog.html">Творог</a>
-                        <a href="maslo.html">Масло</a>
+                        @foreach($categories as $category)
+                        <a href="{{route('product.show' , $category->slug)}}">{{ $category->title }}</a>
+                        @endforeach
                      </div>
                   </li>
-                  <li> <a href="contact.html">Контакты</a> </li>
+                  @else
+                  <li> <a href="{{route('pages.details', $page->slug)}}">{{$page->title}}</a> </li>
+                  @endif
+
+                  @endforeach
+                  <!-- <li> <a href="proizvodstvo.html">Производство</a> </li>
+                  <li> <a href="marka.html">О торговой марке</a></li>
+
+                  <li> <a href="contact.html">Контакты</a> </li> -->
                </ul>
             </div>
             <!-- menu -->

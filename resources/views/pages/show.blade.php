@@ -4,7 +4,7 @@
 
 <!-- baner -->
 
-<section class="single_bg" style="background-image:url({{$product->getImageCategory()}})">
+<section class="single_bg" style="background-image:url('{{$product->getImageCategory()}}')">
    <div class="container">
       <div class="row no-gutters">
          <div class="col-lg-5 catalog__padding">
@@ -100,11 +100,11 @@
       <div class=" swiper-container single_all ">
          <div class="swiper-wrapper ">
 
-            @foreach($product_all as $pr_all)
+            @foreach($categories as $cat)
             <div class="swiper-slide text-center single_all_product_bl">
-               <a href="{{route('product.show' , $pr_all->slug)}}">
-                  <img src="{{$pr_all->getMiniature()}}" alt=" ">
-                  <h6>{{$pr_all->title}}</h6>
+               <a href="{{route('product.show' , $cat->slug)}}">
+                  <img src="{{$cat->getMiniature()}}" alt=" ">
+                  <h6>{{$cat->title}}</h6>
                </a>
             </div>
             @endforeach

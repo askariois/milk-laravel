@@ -25,20 +25,32 @@
          <!-- /.box-header -->
          <div class="box-body">
             <div class="form-group">
-               <a href="{{route('posts.create')}}" class="btn btn-success">Добавить страницу</a>
+               <a href="{{route('pages.create')}}" class="btn btn-success">Добавить страницу</a>
             </div>
             <table id="example1" class="table table-bordered table-striped">
                <thead>
                   <tr>
                      <th>ID</th>
-                     <th>Жирность</th>
-                     <th>Категория</th>
-
-                     <th>Картинка</th>
+                     <th>Заголовок</th>
                      <th>Действия</th>
                   </tr>
                </thead>
+               <tbody>
+                  @foreach($pages as $page)
+                  <tr>
+                     <td>{{$page->id}}</td>
+                     <td>{{$page->title}}</td>
+                     <td><a href="{{route('pages.edit' , $page->id)}}" class="fa fa-pencil"></a>
+                        {!! Form::open(['route' => ['pages.destroy',$page->id], 'method'=>'delete' ]) !!}
+                        <button onclick="return confirm('are you sure ?')" type="submit" class="delete">
+                           <i class="fa fa-remove"></i>
+                        </button>
+                        {!! Form::close() !!}
+                     </td>
 
+                  </tr>
+                  @endforeach
+                  </tfoot>
             </table>
          </div>
          <!-- /.box-body -->
