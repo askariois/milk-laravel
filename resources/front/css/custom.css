@@ -345,6 +345,7 @@ footer .header__social {
     font-size: 0.7em;
     font-weight: bold;
     margin-top: 15px;
+    height: 30px;
 }
 
 .swiper-button-prev:after,
@@ -392,7 +393,7 @@ footer .header__social {
 .swiper-button-next-c {
     width: 50px!important;
     height: 50px!important;
-    right: 35px!important;
+    right: 10px!important;
     background-image: url(../img/next_content.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -401,7 +402,7 @@ footer .header__social {
 .swiper-button-prev-c {
     width: 50px!important;
     height: 50px!important;
-    left: 35px!important;
+    left: 10px!important;
     background-image: url(../img/prev_content.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -615,7 +616,7 @@ input.btn.send-btn {
 
 .swiper-button-next-c,
 .swiper-button-prev-c {
-    top: -5px;
+    top: 0px;
 }
 
 .single_bg .catalog__desc {

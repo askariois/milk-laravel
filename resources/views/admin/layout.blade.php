@@ -1,3 +1,12 @@
+<?php
+
+use Illuminate\Support\Facades\Auth;
+use App\User;
+
+$user_name = Auth::user()->name;
+$user_img = Auth::user()->avatar;
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -22,7 +31,7 @@
 
       <header class="main-header">
          <!-- Logo -->
-         <a href="../../index2.html" class="logo">
+         <a href="/" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>В</b>М</span>
             <!-- logo for regular state and mobile devices -->
@@ -38,7 +47,9 @@
                <span class="icon-bar"></span>
             </a>
 
-
+            <div class="navbar-custom-menu">
+               <a href="/logout" class="btn btn-danger">Выйти с админки</a>
+            </div>
          </nav>
       </header>
 
@@ -51,10 +62,10 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                <div class="pull-left image">
-                  <img src="/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                  <img src="/uploads/{{$user_img}}" class="img-circle" alt="User Image">
                </div>
                <div class="pull-left info">
-                  <p>Alexander Pierce</p>
+                  <p>{{$user_name }}</p>
                   <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                </div>
             </div>
