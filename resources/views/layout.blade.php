@@ -75,7 +75,8 @@
                </div>
 
 
-
+               <a href="{{ route('locale', ['locale' => 'kg']) }}">kg</a>
+               <a href="{{ route('locale', ['locale' => 'ru']) }}">ru</a>
                <div class="button b2" id="button-10">
                   <input type="checkbox" class="checkbox" onclick="document.location='kg/index.html'">
                   <div class="knobs">
@@ -101,7 +102,7 @@
       <div class="container">
          <div class="row justify-content-between align-items-center">
             <div class="col-lg-auto footer__link">
-               <a href="/img/politic.pdf">Пользовательское соглашение</a>
+               <a href="/img/politic.pdf">{{__('index.politic_link')}}</a>
             </div>
             <div class="col-lg-auto footer__link">
                <a href="contact.html">Обратная связь</a>

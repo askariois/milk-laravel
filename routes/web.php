@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,6 @@ Route::get('/login', 'AuthController@loginForm');
 Route::post('/login', 'AuthController@login');
 Route::get('/logout', 'AuthController@logout');
 
-
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin'], function () {
     Route::get('/', 'DashboardController@index');
     Route::resource('/categories', 'CategorisController');
@@ -29,3 +29,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
     Route::resource('/posts', 'PostController');
     Route::resource('/pages', 'PageController');
 });
+
+
+Route::get('locale/{locale}', function ($locale) {
+    Session::put('locale', $locale);
+
+    return redirect()->back();
+})->name('locale');
