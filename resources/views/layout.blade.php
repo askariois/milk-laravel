@@ -19,6 +19,8 @@
 </head>
 
 <body>
+
+
    <!-- header2 -->
    <header>
       <div class="container">
@@ -105,14 +107,20 @@
                   <div class="layer "></div>
                </div>
                @endif
+
+
                <div class="header_serch">
-                  <img src="/img/search_icon.svg" alt="" />
+                  <form id="demo-b" method="GET" action="{{ route('search')}}">
+                     <input type="search" placeholder="Искать" name="query" class="form-control" autocomplete="off">
+                  </form>
+                  <!-- <img src="/img/search_icon.svg" alt="" /> -->
                </div>
             </div>
             <!-- social and language -->
          </div>
       </div>
    </header>
+
    <!-- header -->
 
    @yield('content')
@@ -122,10 +130,19 @@
       <div class="container">
          <div class="row justify-content-between align-items-center">
             <div class="col-lg-auto footer__link">
-               <a href="/img/politic.pdf">{{__('index.politic_link')}}</a>
+               @if (App::isLocale('ru'))
+               <a href="/img/politic.pdf" target="_blank">{{__('index.politic_link')}}</a>
+               @else
+               <a href="/img/politic_kg.pdf" target="_blank">{{__('index.politic_link')}}</a>
+               @endif
             </div>
             <div class="col-lg-auto footer__link">
-               <a href="contact.html">{{__('index.callback')}}</a>
+               @if (App::isLocale('ru'))
+               <a href="/ru/pages/kontakty">{{__('index.callback')}}</a>
+               @else
+               <a href="/kg/pages/kontakty">{{__('index.callback')}}</a>
+               @endif
+
             </div>
             <div class="col-lg-3">
                @if(isset($settings))
@@ -152,7 +169,6 @@
    </footer>
 
    <script src="/js/front.js"></script>
-
 </body>
 
 </html>

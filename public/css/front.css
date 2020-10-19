@@ -9895,6 +9895,100 @@ img.footer_logo_mob {
 
 
 /* Блок производства */
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+    display: none;
+    /* Удаляем иконку поиска и сброса */
+}
+
+
+/* Поле ввода строки поиска */
+
+.header_serch form {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.header_serch input[type=search] {
+    background: #0060cb url('../img/search_icon.svg');
+    background-size: 19px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0;
+    padding: 0;
+    width: 55px;
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+    border-radius: 10em;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+.header_serch input[type=search]:focus {
+    width: 130px;
+    background-color: #fff;
+    border-color: #6dcff6;
+    -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+    -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+    box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+}
+
+
+/* Заполнитель */
+
+
+/* Демо B */
+
+#demo-b input[type=search] {
+    width: 36px;
+    height: 35px;
+    color: transparent;
+    cursor: pointer;
+    display: block;
+}
+
+#demo-b input[type=search]:hover {
+    background-color: #0060cb;
+}
+
+#demo-b input[type=search]:focus {
+    width: 130px;
+    margin-left: -100px;
+    padding-left: 32px;
+    color: #fff;
+    background-color: #0060cb;
+    background-position-x: 10px;
+    cursor: auto;
+    z-index: 999;
+}
+
+.header_serch ::placeholder {
+    color: transparent;
+}
+
+.header_serch :focus::-webkit-input-placeholder {
+    color: white;
+}
+
+.header_serch :focus::-moz-placeholder {
+    color: white;
+}
+
+.header_serch :focus:-moz-placeholder {
+    color: white;
+}
+
+.header_serch :focus:-ms-input-placeholder {
+    color: white;
+}
+
+.header_serch input[type=search]:focus input::-webkit-input-placeholder {
+    color: white;
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document

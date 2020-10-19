@@ -108,4 +108,7 @@ class Category extends Model
 
         return '/uploads/' . $this->miniature;
     }
+
+
+    
 }

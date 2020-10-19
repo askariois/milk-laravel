@@ -24,6 +24,7 @@ Route::group([
     Route::get('/', 'HomeController@index');
     Route::get('/product/{slug}', 'HomeController@show')->name('product.show');
     Route::get('/pages/{slug}', 'PagehomeController@details')->name('pages.details');
+    Route::get('/search', 'HomeController@search')->name('search');
 });
 
 
