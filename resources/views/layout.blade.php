@@ -45,6 +45,7 @@
 
                <ul class="menu d-flex mb-0 justify-content-between header_menu">
                   <li> <input type="search" placeholder="Найти" /></li>
+                  @if (App::isLocale('ru'))
                   @foreach($pages as $page)
                   @if(($page->id == '4'))
                   <li class="dropdown">
@@ -60,10 +61,23 @@
                   @endif
 
                   @endforeach
-                  <!-- <li> <a href="proizvodstvo.html">Производство</a> </li>
-                  <li> <a href="marka.html">О торговой марке</a></li>
+                  @else
+                  @foreach($pages as $page)
+                  @if(($page->id == '4'))
+                  <li class="dropdown">
+                     <a href="{{route('pages.details', $page->slug)}}" data-toggle="dropdown">{{$page->title_kg}}</a>
+                     <div class="dropdown-content">
+                        @foreach($categories as $category)
+                        <a href="{{route('product.show' , $category->slug)}}">{{ $category->title_kg}}</a>
+                        @endforeach
+                     </div>
+                  </li>
+                  @else
+                  <li> <a href="{{route('pages.details', $page->slug)}}">{{$page->title_kg}}</a> </li>
+                  @endif
 
-                  <li> <a href="contact.html">Контакты</a> </li> -->
+                  @endforeach
+                  @endif
                </ul>
             </div>
             <!-- menu -->
@@ -74,17 +88,23 @@
                   @include('social')
                </div>
 
-
-               <a href="{{ route('locale', ['locale' => 'kg']) }}">kg</a>
-               <a href="{{ route('locale', ['locale' => 'ru']) }}">ru</a>
+               @if (App::isLocale('ru'))
                <div class="button b2" id="button-10">
-                  <input type="checkbox" class="checkbox" onclick="document.location='kg/index.html'">
+                  <input type="checkbox" class="checkbox" onclick="document.location='/kg'">
                   <div class="knobs">
                      <span>Ру</span>
                   </div>
                   <div class="layer"></div>
                </div>
-
+               @else
+               <div class="button b2" id="button-10">
+                  <input type="checkbox" class="checkbox" onclick="document.location='/ru'">
+                  <div class=" knobs kg_button ">
+                     <span>Ру</span>
+                  </div>
+                  <div class="layer "></div>
+               </div>
+               @endif
                <div class="header_serch">
                   <img src="/img/search_icon.svg" alt="" />
                </div>
@@ -105,7 +125,7 @@
                <a href="/img/politic.pdf">{{__('index.politic_link')}}</a>
             </div>
             <div class="col-lg-auto footer__link">
-               <a href="contact.html">Обратная связь</a>
+               <a href="contact.html">{{__('index.callback')}}</a>
             </div>
             <div class="col-lg-3">
                @if(isset($settings))
@@ -115,7 +135,7 @@
                @endif
             </div>
             <div class="col-lg-auto">
-               <p>2020 ОАО «Бишкексут»</p>
+               <p>{{__('index.copyright')}}</p>
             </div>
             <div class="col-lg-2">
                @if(isset($settings))

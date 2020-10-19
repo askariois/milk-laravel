@@ -84,7 +84,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                Laravel 7
+                Laravel {{__('index.set_lang')}}
             </div>
 
             <div class="links">

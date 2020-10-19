@@ -3090,4 +3090,6 @@ $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
 
 $(document).ready(function() {
     $('#summernote').summernote();
+    $('#summernote_kg').summernote();
+
 });

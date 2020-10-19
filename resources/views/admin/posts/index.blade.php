@@ -30,7 +30,7 @@
                      <th>ID</th>
                      <th>Жирность</th>
                      <th>Категория</th>
-
+                     <th>Масса</th>
                      <th>Картинка</th>
                      <th>Действия</th>
                   </tr>
@@ -40,8 +40,8 @@
                   <tr>
                      <td>{{$post->id}}</td>
                      <td>{{$post->title}} </td>
-                     <td>{{$post->getCategoryTitle()}}</td>
-
+                     <td>{{$post->getCategoryTitle()}} ({{$post->getCategoryTitleKg()}} )</td>
+                     <td>{{$post->product_massa}}</td>
                      <td>
                         <img src="{{$post->getImage()}}" alt="" width="50">
                      </td>

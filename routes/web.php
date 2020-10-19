@@ -1,8 +1,10 @@
 <?php
 
+use App\Services\Localization\LocalizationService;
+use GuzzleHttp\Psr7\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +16,19 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
-Route::get('/', 'HomeController@index');
-Route::get('/product/{slug}', 'HomeController@show')->name('product.show');
-Route::get('/pages/{slug}', 'PagehomeController@details')->name('pages.details');
+
+Route::group([
+    'prefix' => LocalizationService::locale(),
+    'middleware' => 'set_Locale',
+], function () {
+    Route::get('/', 'HomeController@index');
+    Route::get('/product/{slug}', 'HomeController@show')->name('product.show');
+    Route::get('/pages/{slug}', 'PagehomeController@details')->name('pages.details');
+});
+
+
+
+
 Route::get('/login', 'AuthController@loginForm');
 Route::post('/login', 'AuthController@login');
 Route::get('/logout', 'AuthController@logout');
@@ -31,8 +43,4 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admi
 });
 
 
-Route::get('locale/{locale}', function ($locale) {
-    Session::put('locale', $locale);
-
-    return redirect()->back();
-})->name('locale');
+//Переключение языков

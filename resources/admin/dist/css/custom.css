@@ -8,3 +8,25 @@
     border: 0;
     color: #3d8ebc;
 }
+
+a.nav-item {
+    padding: 10px 20px;
+    background: #3c8dbc;
+    color: white;
+    border: 1px solid #3c8dbc;
+    font-weight: bold;
+}
+
+a.nav-item.active {
+    border: 1px solid #374850;
+    background: white;
+    color: #374850;
+}
+
+.nav-tabs {
+    display: flex;
+}
+
+ul#pills-tab {
+    margin-top: 10px;
+}

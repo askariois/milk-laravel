@@ -11,7 +11,7 @@ class Category extends Model
 {
     use Sluggable;
 
-    protected $fillable = ['title', 'image', 'content', 'miniature'];
+    protected $fillable = ['title', 'image', 'content', 'miniature', 'title_kg', 'content_kg'];
 
     public function posts()
     {
@@ -36,7 +36,7 @@ class Category extends Model
         return $category;
     }
 
-    
+
     public function edit($fields)
     {
         $this->fill($fields);
@@ -108,5 +108,4 @@ class Category extends Model
 
         return '/uploads/' . $this->miniature;
     }
-
 }

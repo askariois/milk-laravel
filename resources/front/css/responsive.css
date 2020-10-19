@@ -129,6 +129,9 @@
             /* MAX-576 */
             
             @media (max-width: 576px) {
+                .pr1__bg--heading_kg {
+                    font-size: 20px;
+                }
                 .single_all .swiper-slide-active {
                     opacity: 1;
                 }
@@ -195,7 +198,7 @@
                 }
                 .catalog .gallery-top .swiper-button-prev,
                 .swiper-button-next {
-                    top: 29%;
+                    top: 29%!important;
                 }
                 .catalog .gallery-thumbs .swiper-slide-thumb-active {
                     background-image: none;

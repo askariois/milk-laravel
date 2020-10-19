@@ -15,7 +15,7 @@ class Post extends Model
     const IS_DRAFT = 0;
     const IS_PUBLIC = 1;
 
-    protected $fillable = ['title', 'content', 'date', 'product_temp', 'product_srok', 'product_massa'];
+    protected $fillable = ['title', 'content', 'content_kg', 'date', 'product_temp', 'product_srok', 'product_massa', 'product_temp_kg', 'product_srok_kg', 'product_massa_kg'];
 
     public function category()
     {
@@ -131,6 +131,15 @@ class Post extends Model
     {
         if ($this->category != null) {
             return $this->category->title;
+        }
+
+        return 'нет категории';
+    }
+
+    public function getCategoryTitleKg()
+    {
+        if ($this->category != null) {
+            return $this->category->title_kg;
         }
 
         return 'нет категории';

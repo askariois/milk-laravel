@@ -11,7 +11,11 @@
                <div class="col-lg-4 product_cat">
                   <a href="{{route('product.show' , $category->slug)}}">
                      <img src="{{$category->getMiniature()}}" alt="">
+                     @if (App::isLocale('ru'))
                      <h5>{{ $category->title }}</h5>
+                     @else
+                     <h5>{{ $category->title_kg }}</h5>
+                     @endif
                   </a>
                </div>
                @endforeach
@@ -22,36 +26,42 @@
 </section>
 
 @elseif($page_details->id == '5')
+
+
 <section class="contact">
    <div class="container">
       <div class="row align-items-center">
          <div class="col-lg-9 offset-lg-1 d-flex align-items-center">
-            <h3>Отзыв</h3>
+            <h3>{{__('index.review')}}</h3>
             <div class="catalog__line"></div>
          </div>
 
          <div class="col-lg-9 offset-lg-1 mp-0">
             <div class="row justify-content-between">
                <div class="col-xl-7 col-lg-7">
-                  <h3>или предложение</h3>
+                  <h3>{{__('index.review_sec')}}</h3>
                   <form action="#" class="mt-4">
                      <div class="d-flex justify-content-between">
-                        <input type="text" placeholder="Имя">
-                        <input type="text" placeholder="Фамилия">
+                        <input type="text" placeholder="{{__('index.name')}}">
+                        <input type="text" placeholder="{{__('index.fullname')}}">
                      </div>
                      <div class="d-flex justify-content-between mt-2">
                         <input type="text" placeholder="Email">
                         <input type="text" placeholder="Телефон">
                      </div>
                      <div class="d-flex justify-content-between mt-2">
-                        <textarea name="" id="" rows="5" placeholder="Отзыв или предложение"></textarea>
+                        <textarea name="" id="" rows="5" placeholder="{{__('index.textarea')}}"></textarea>
                      </div>
-                     <input type="submit" name="submit" class="btn send-btn mt-2" value="Отправить">
+                     <input type="submit" name="submit" class="btn send-btn mt-2" value="{{__('index.btn_send')}}">
                   </form>
                </div>
 
                <div class="col-xl-3 col-lg-4">
+                  @if (App::isLocale('ru'))
                   {!! $page_details->content !!}
+                  @else
+                  {!! $page_details->content_kg !!}
+                  @endif
                </div>
             </div>
          </div>
@@ -59,9 +69,16 @@
    </div>
 </section>
 
-
 @else
+
+
+@if (App::isLocale('ru'))
 {!! $page_details->content !!}
+@else
+{!! $page_details->content_kg !!}
+@endif
+
+
 @endif
 
 @endsection

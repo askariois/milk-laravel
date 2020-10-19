@@ -9,7 +9,11 @@
       <div class="row no-gutters">
          <div class="col-lg-5 catalog__padding">
             <div class="catalog__desc">
+               @if (App::isLocale('ru'))
                {!! $product->content !!}
+               @else
+               {!! $product->content_kg !!}
+               @endif
             </div>
          </div>
       </div>
@@ -30,31 +34,50 @@
                      <div class="row justify-content-between">
 
                         <div class="col-lg-4 single_catalog_1coll">
-                           <h2>{{$p_d_a->category->title}} {{$p_d_a->title}}</h2>
+                           <h2>@if (App::isLocale('ru')){{$p_d_a->category->title}} @else {{$p_d_a->category->title_kg}} @endif {{$p_d_a->title}}</h2>
                            <hr class="single_pr_line">
+                           @if (App::isLocale('ru'))
                            {!! $p_d_a->content !!}
-
+                           @else
+                           {!! $p_d_a->content_kg !!}
+                           @endif
                         </div>
                         <div class="col-lg-4 single_image">
                            <img src="{{$p_d_a->getImage()}}" alt="">
                         </div>
                         <div class="col-lg-4 single_catalog_2coll flex-item">
                            <div class="d-flex align-items-center mb-4">
-                              <img src="../img/cold1.png" alt="">
-                              <p>{{$p_d_a->product_temp}}
+                              <img src="{{ url('/img/cold1.png') }}" alt="">
+                              <p>
+                                 @if (App::isLocale('ru'))
+                                 {{$p_d_a->product_temp}}
+                                 @else
+                                 {{$p_d_a->product_temp_kg}}
+                                 @endif
                               </p>
                            </div>
 
                            <div class="d-flex align-items-center mb-4">
-                              <img src="../img/callendar.png" alt="">
-                              <p>Срок годности: <br /> {{$p_d_a->product_srok}}
+                              <img src="{{ url('/img/callendar.png') }}" alt="">
+                              <p>{{__('index.product_srok')}} <br />
+                                 @if (App::isLocale('ru'))
+                                 {{$p_d_a->product_srok}}
+                                 @else
+                                 {{$p_d_a->product_srok_kg}}
+                                 @endif
+
                               </p>
                            </div>
 
 
                            <div class="d-flex align-items-center ">
-                              <img src="../img/massa.png" alt="">
-                              <p>Масса нетто: <br /> {{$p_d_a->product_massa}}
+                              <img src="{{ url('/img/massa.png') }}" alt="">
+                              <p>{{__('index.massa_srok')}} <br />
+                                 @if (App::isLocale('ru'))
+                                 {{$p_d_a->product_massa}}
+                                 @else
+                                 {{$p_d_a->product_massa_kg}}
+                                 @endif
                               </p>
                            </div>
                         </div>
@@ -78,9 +101,9 @@
                      <img src="{{$p_d_a->getImage()}}" alt=" ">
                      <h6>
                         @if(($p_d_a->category->id == '1') or ($p_d_a->category->id == '2') )
-                        Молоко {{$p_d_a->title}}
+                        @if (App::isLocale('ru')) Молоко @else Сүт @endif {{$p_d_a->title}}
                         @else
-                        {{$p_d_a->category->title}} {{$p_d_a->title}}
+                        @if (App::isLocale('ru')) {{$p_d_a->category->title}} @else {{$p_d_a->category->title_kg}} @endif {{$p_d_a->title}}
                         @endif
                         <br /> {{$p_d_a->product_massa}} </h6>
                   </div>
@@ -104,7 +127,11 @@
             <div class="swiper-slide text-center single_all_product_bl">
                <a href="{{route('product.show' , $cat->slug)}}">
                   <img src="{{$cat->getMiniature()}}" alt=" ">
+                  @if (App::isLocale('ru'))
                   <h6>{{$cat->title}}</h6>
+                  @else
+                  <h6>{{$cat->title_kg}}</h6>
+                  @endif
                </a>
             </div>
             @endforeach

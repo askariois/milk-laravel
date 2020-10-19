@@ -499,9 +499,10 @@ textarea {
     border: 3px solid #80afe5;
     border-radius: 15px;
     padding: 10px;
-    margin-right: 10px;
-    font-size: 15px;
+    margin-right: 10px!important;
+    font-size: 15px!important;
     width: 100%;
+    line-height: inherit!important;
 }
 
 input.btn.send-btn {
@@ -856,11 +857,20 @@ img.footer_logo_mob {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    padding: 45px 0;
+    padding: 45px 0px 55px 0;
 }
 
 .pr1__bg--heading {
     font-size: 40px;
+    line-height: 1;
+    text-align: center;
+    color: #0060cb;
+    font-weight: bold;
+    display: block;
+}
+
+.pr1__bg--heading_kg {
+    font-size: 35px;
     line-height: 1;
     text-align: center;
     color: #0060cb;
