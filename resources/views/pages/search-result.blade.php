@@ -10,7 +10,7 @@
          @if (App::isLocale('ru'))
          {{ $product ->count() + $page_ser ->count()  }} результатов поиска по слову "{{ request()->input('query')}}"
          @else
-         "{{ request()->input('query')}}" сөзү боюнча издөөдө {{ $product_kg ->count() }} натыйжа бар
+         "{{ request()->input('query')}}" сөзү боюнча издөөдө {{ $product_kg ->count() + $page_ser_kg ->count() }} натыйжа бар
          @endif
       </div>
 
@@ -29,9 +29,15 @@
    <p>{{ strip_tags($pr->content) }}</p>
    @endforeach
    @else
+
    @foreach ($product_kg as $pr_kg)
    <h1> <a href="{{route('product.show' , $pr_kg->slug )}}">{{ $pr_kg->title_kg }} </a> </h1>
    <p>{{ strip_tags($pr_kg->content_kg) }}</p>
+   @endforeach
+
+   @foreach ($page_ser_kg as $pag_ser_kg)
+   <h1> <a href="{{route('pages.details', $pag_ser_kg->slug )}}">{{ $pag_ser_kg->title_kg }} </a> </h1>
+   <p>{{ strip_tags($pag_ser_kg->content_kg) }}</p>
    @endforeach
    @endif
 
