@@ -44,6 +44,6 @@ class HomeController extends Controller
         $query = $request->input('query');
         $product = Category::where('title', 'like', "%$query%")->orWhere('content', 'like', "%$query%")->get();
         $product_kg = Category::where('title_kg', 'like', "%$query%")->orWhere('content_kg', 'like', "%$query%")->get();
-        return view('pages.search-result', compact('categories', 'pages', 'settings'))->with('product_kg', $product_kg, 'product', $product);
+        return view('pages.search-result', compact('categories', 'pages', 'settings'))->with('product_kg', $product_kg)->with('product', $product);
     }
 }

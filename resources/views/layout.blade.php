@@ -111,7 +111,7 @@
 
                <div class="header_serch">
                   <form id="demo-b" method="GET" action="{{ route('search')}}">
-                     <input type="search" placeholder="Искать" name="query" class="form-control" autocomplete="off">
+                     <input type="search" placeholder="{{__('index.search')}}" name="query" class="form-control" autocomplete="off">
                   </form>
                   <!-- <img src="/img/search_icon.svg" alt="" /> -->
                </div>
@@ -169,6 +169,7 @@
    </footer>
 
    <script src="/js/front.js"></script>
+   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 </body>
 
 </html>

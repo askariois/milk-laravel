@@ -65,6 +65,7 @@ mix.scripts([
     'resources/front/js/jquery.js',
     'resources/front/js/SwiperBox.js',
     'resources/front/js/custom.js',
+    'resources/front/js/send_ajax.js',
 ], 'public/js/front.js');
 
 

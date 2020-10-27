@@ -5,12 +5,12 @@
 <div class="container">
    <div class="row justify-content-center">
       <div class="col-lg-6 text-center">
-         <h1>Поиск:</h1>
+         <h1>{{__('index.search_page')}}:</h1>
          @include('admin.error')
          @if (App::isLocale('ru'))
          {{ $product ->count() }} результатов поиска по слову "{{ request()->input('query')}}"
          @else
-         {{ $product_kg ->count() }} результатов поиска по слову "{{ request()->input('query')}}
+         "{{ request()->input('query')}}" сөзү боюнча издөөдө {{ $product_kg ->count() }} натыйжа бар
          @endif
       </div>
 

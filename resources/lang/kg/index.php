@@ -17,4 +17,6 @@ return [
    'phone' =>  'Телефон',
    'textarea' =>  'Пикир же сунуш',
    'btn_send' => 'Жөнөтүү',
+   'search' => 'Издөө',
+   'search_page' => 'Издөө',
 ];
