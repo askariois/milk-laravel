@@ -9480,7 +9480,7 @@ textarea {
     line-height: inherit!important;
 }
 
-input.btn.send-btn {
+button.btn.send-btn {
     text-transform: uppercase;
     font-size: 14px;
     background: #0764cf;

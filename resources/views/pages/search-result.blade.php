@@ -8,7 +8,7 @@
          <h1>{{__('index.search_page')}}:</h1>
          @include('admin.error')
          @if (App::isLocale('ru'))
-         {{ $product ->count() }} результатов поиска по слову "{{ request()->input('query')}}"
+         {{ $product ->count() + $page_ser ->count()  }} результатов поиска по слову "{{ request()->input('query')}}"
          @else
          "{{ request()->input('query')}}" сөзү боюнча издөөдө {{ $product_kg ->count() }} натыйжа бар
          @endif
@@ -18,6 +18,12 @@
 
 
    @if (App::isLocale('ru'))
+
+   @foreach ($page_ser as $pag_ser)
+   <h1> <a href="{{route('pages.details', $pag_ser->slug )}}">{{ $pag_ser->title }} </a> </h1>
+   <p>{{ strip_tags($pag_ser->content) }}</p>
+   @endforeach
+
    @foreach ($product as $pr)
    <h1> <a href="{{route('product.show' , $pr->slug )}}">{{ $pr->title }} </a> </h1>
    <p>{{ strip_tags($pr->content) }}</p>

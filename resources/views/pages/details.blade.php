@@ -40,20 +40,21 @@
             <div class="row justify-content-between">
                <div class="col-xl-7 col-lg-7">
                   <h3>{{__('index.review_sec')}}</h3>
-                  <form action="#" class="mt-4">
+                  <form action="#" id="pingForm" class="mt-4">
                      <div class="d-flex justify-content-between">
-                        <input type="text" placeholder="{{__('index.name')}}">
-                        <input type="text" placeholder="{{__('index.fullname')}}">
+                        <input type="text" name="name" placeholder="{{__('index.name')}}">
+                        <input type="text" name="fullname" placeholder="{{__('index.fullname')}}">
                      </div>
                      <div class="d-flex justify-content-between mt-2">
-                        <input type="text" placeholder="Email">
-                        <input type="text" placeholder="Телефон">
+                        <input type="text" name="email" placeholder="Email">
+                        <input type="text" name="phone" placeholder="Телефон">
                      </div>
                      <div class="d-flex justify-content-between mt-2">
-                        <textarea name="" id="" rows="5" placeholder="{{__('index.textarea')}}"></textarea>
+                        <textarea name="message" id="contact_text" rows="5" placeholder="{{__('index.textarea')}}"></textarea>
                      </div>
-                     <input type="submit" name="submit" class="btn send-btn mt-2" value="{{__('index.btn_send')}}">
+                     <button type="submit" class="btn send-btn mt-2">{{__('index.btn_send')}}</button>
                   </form>
+                  <div class="mt-3" id="contact_result"></div>
                </div>
 
                <div class="col-xl-3 col-lg-4">
